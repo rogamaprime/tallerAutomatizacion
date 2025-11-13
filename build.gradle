@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group = 'co.com.bdb.automation'
+version = '1.0.0'
+sourceCompatibility = '17'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+ext {
+    serenityVersion = '4.1.15'
+    junitVersion = '4.13.2'
+    cucumberVersion = '7.15.0'
+}
+
+dependencies {
+    testImplementation "net.serenity-bdd:serenity-core:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-junit:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-screenplay:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-ensure:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-cucumber:${serenityVersion}"
+    testImplementation "org.slf4j:slf4j-simple:2.0.7"
+    testImplementation "junit:junit:${junitVersion}"
+    testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
+    testImplementation "io.cucumber:cucumber-junit:${cucumberVersion}"
+}
+
+test {
+    useJUnit()
+    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
+}
