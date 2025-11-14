@@ -23,7 +23,7 @@ public class loginTask implements Task {
                 Enter.keyValues(data.get("Usuario")).into(Usuario),
                 Enter.keyValues(data.get("Contrasena")).into(Contrasena),
                 Click.on(btnLogin)
-                //Ensure.that(dashboar).isDisplayed()
+
         );
     }
     //Es el metodo crea un objeto apartir de la clase
