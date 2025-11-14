@@ -15,4 +15,7 @@ public class webObject {
 
     public static final Target btnLogin = Target.the("btnLogin")
             .located(By.xpath("(//button[normalize-space()='Login'])[1]"));
+
+    public static final Target barLogin = Target.the("loginExitoso")
+            .located(By.xpath("(//div[@class='oxd-topbar-header'])[1]"));
 }

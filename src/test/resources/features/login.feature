@@ -8,7 +8,7 @@ Característica: como usuario quiero validar el login en la pagina orange
     Cuando ingrese las credenciales con los datos correctos
     |Usuario|Contrasena|
     |<Usuario>|<Contrasena>|
- # Entonces Se visualizara el nombre del usuario con la foto
+ Entonces Se visualizara el nombre del usuario con la foto
   Ejemplos:
     | Usuario | Contrasena |
     | Admin | admin123 |

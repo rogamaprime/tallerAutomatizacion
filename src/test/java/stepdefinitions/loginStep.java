@@ -1,14 +1,20 @@
 package stepdefinitions;
 
 import io.cucumber.java.es.Cuando;
+import io.cucumber.java.es.Entonces;
 import io.cucumber.java.gl.Dado;
 import net.serenitybdd.screenplay.actions.Open;
+import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import task.loginTask;
 
 import java.util.List;
 import java.util.Map;
 
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static stepdefinitions.actors.COMMON_ACTOR;
+import static ui.webObject.barLogin;
+
 //Esta clase se utiliza para traducir los pasos del feature en acciones de código
 public class loginStep {
 
@@ -30,5 +36,12 @@ public class loginStep {
     {
         Map<String, String> parameters = dataMapList.get(0);
         COMMON_ACTOR.attemptsTo(loginTask.iniciarSesion(parameters));
+    }
+    @Entonces("Se visualizara el nombre del usuario con la foto")
+    public void seVisualizaraElNombreDelUsuarioConLaFoto() {
+        COMMON_ACTOR.attemptsTo(
+                WaitUntil.the(barLogin, isVisible()).forNoMoreThan(30).seconds(),
+                Ensure.that(barLogin).isDisplayed()
+        );
     }
 }
