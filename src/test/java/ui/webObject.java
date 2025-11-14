@@ -18,4 +18,7 @@ public class webObject {
 
     public static final Target barLogin = Target.the("loginExitoso")
             .located(By.xpath("(//div[@class='oxd-topbar-header'])[1]"));
+
+    public static final Target loginerror = Target.the("loginerror")
+            .located(By.xpath("(//div[@role='alert'])[1]"));
 }

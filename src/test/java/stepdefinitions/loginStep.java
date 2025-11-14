@@ -14,6 +14,7 @@ import java.util.Map;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static stepdefinitions.actors.COMMON_ACTOR;
 import static ui.webObject.barLogin;
+import static ui.webObject.loginerror;
 
 //Esta clase se utiliza para traducir los pasos del feature en acciones de código
 public class loginStep {
@@ -42,6 +43,19 @@ public class loginStep {
         COMMON_ACTOR.attemptsTo(
                 WaitUntil.the(barLogin, isVisible()).forNoMoreThan(30).seconds(),
                 Ensure.that(barLogin).isDisplayed()
+        );
+    }
+    @Cuando("ingrese las credenciales con los datos incorrectos")
+    public void ingreselascredencialesconlosdatosincorrectos(List<Map<String, String>> dataMapList)
+    {
+        Map<String, String> parameters = dataMapList.get(0);
+        COMMON_ACTOR.attemptsTo(loginTask.iniciarSesion(parameters));
+    }
+    @Entonces("Se debe visualizar el mensaje de error")
+    public void Sedebevisualizarelmensajedeerror() {
+        COMMON_ACTOR.attemptsTo(
+                WaitUntil.the(loginerror, isVisible()).forNoMoreThan(30).seconds(),
+                Ensure.that(loginerror).isDisplayed()
         );
     }
 }
