@@ -7,8 +7,7 @@ import task.usuarioTask;
 
 
 import static stepdefinitions.actors.COMMON_ACTOR;
-import static ui.webObjectUsuarios.confContraseña;
-import static ui.webObjectUsuarios.contraseña;
+import static ui.webObjectUsuarios.*;
 
 
 //Esta clase se utiliza para traducir los pasos del feature en acciones de código
