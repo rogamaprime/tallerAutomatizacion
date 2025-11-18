@@ -3,11 +3,11 @@ package stepdefinitions;
 
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
-import task.usuarioTask;
+import task.formularioTask;
+import task.nuevoTask;
 
 
 import static stepdefinitions.actors.COMMON_ACTOR;
-import static ui.webObjectUsuarios.*;
 
 
 //Esta clase se utiliza para traducir los pasos del feature en acciones de código
@@ -20,12 +20,12 @@ public class UsuarioStep {
     @Y("ingrese al modulo admin y de clic en el botón + Add")
     public void ingresealmoduloadminydeclicenelbotónAdd()throws InterruptedException
     {
-        COMMON_ACTOR.attemptsTo(usuarioTask.diligenciarFormulario(nombreEmpleado, nombreUsuario, contraseña, confContraseña));
+        COMMON_ACTOR.attemptsTo(nuevoTask.nuevoUsuario());
     }
-    @Entonces("se diligencian los campos{String}, {String}´, {String}, {String}")
-    public void sediligencianloscampos(String nombreEmpleado, String nombreUsuario, String contraseña, String confContraseña)throws InterruptedException{
+    @Entonces("se diligencian los campos {string}, {string}, {string}, {string}")
+    public void sediligencianloscampos (String nombreEmpleado, String nombreUsuario, String contraseña, String confContraseña)throws InterruptedException{
         COMMON_ACTOR.attemptsTo(
-                usuarioTask.diligenciarFormulario(nombreEmpleado, nombreUsuario, contraseña, confContraseña)
+                formularioTask.diligenciarFormulario(nombreEmpleado, nombreUsuario, contraseña, confContraseña)
         );
     }
 }

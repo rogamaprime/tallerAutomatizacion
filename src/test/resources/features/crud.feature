@@ -12,10 +12,10 @@ Antecedentes:
 @Crearusuario
   Esquema del escenario: Crear usuario exitoso.
     Y ingrese al modulo admin y de clic en el botón + Add
-  Entonces se diligencian los campos "<NombreEmpleado>", "<nombreUsuario>", "<Contraseña>", "<ConfContraseña>"
+  Entonces se diligencian los campos "<Empleado>", "<Usuario>", "<Clave>", "<ConfClave>"
     Ejemplos:
-      | NombreEmpleado | nombreUsuario | Contraseña | ConfContraseña |
-      | Prueba | pruebausuario | 12345 | 12345 |
+      | Empleado | Usuario | Clave | ConfClave |
+      | Joseph  Evans | pruebausuario | 12345 | 12345 |
 
 
 
