@@ -43,9 +43,11 @@ public class formularioTask implements Task {
                 Enter.theValue(Usuario).into(nombre_Usuario),
                 Enter.theValue(Clave).into(contraseña),
                 Enter.theValue(ConfClave).into(conf_Contraseña),
-                Click.on(btnAhorrar)
+                Click.on(btnAhorrar),
+                WaitUntil.the(registroUsuario, isVisible()).forNoMoreThan(60).seconds()
         );
     }
+
     //Es el metodo crea un objeto apartir de la clase
     public static formularioTask diligenciarFormulario(String Empleado, String Usuario, String Clave, String ConfClave) {
         return instrumented(formularioTask.class, Empleado, Usuario, Clave, ConfClave);

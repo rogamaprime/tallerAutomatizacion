@@ -4,7 +4,8 @@ import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class webObjectUsuarios {
-    private webObjectUsuarios(){}
+    private webObjectUsuarios() {
+    }
 
     public static Target btnAdmin = Target.the("Botón Admin")
             .located(By.xpath("//span[text()='Admin']"));
@@ -12,7 +13,7 @@ public class webObjectUsuarios {
     public static final Target btnAdd = Target.the("btnAdd")
             .located(By.xpath("//button[normalize-space()='Add']"));
 
-    public static final Target drowRolUsuario  = Target.the("Dropdown Rol de Usuario")
+    public static final Target drowRolUsuario = Target.the("Dropdown Rol de Usuario")
             .located(By.xpath("//label[normalize-space()='User Role' or normalize-space()='Rol de usuario']" +
                     "/following::div[contains(@class,'oxd-select-text')][1]"));
     public static final Target drowRolAdmin = Target.the("Opción rol Admin")
@@ -35,7 +36,7 @@ public class webObjectUsuarios {
             .located(By.xpath("//div[@role='listbox']//span[normalize-space()='Enabled' or normalize-space()='Activado']"));
 
     //public static final Target OPT_ESTADO_DISABLED = Target.the("Opción Estado Disabled/Desactivado")
-            //.located(By.xpath("//div[@role='listbox']//span[normalize-space()='Disabled' or normalize-space()='Desactivado']"));
+    //.located(By.xpath("//div[@role='listbox']//span[normalize-space()='Disabled' or normalize-space()='Desactivado']"));
 
     public static final Target nombre_Usuario = Target.the("nombreUsuario")
             .located(By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]"));
@@ -48,5 +49,8 @@ public class webObjectUsuarios {
 
     public static Target btnAhorrar = Target.the("Botón ahorrar")
             .located(By.xpath("//button[normalize-space()='Save']"));
+
+    public static Target registroUsuario = Target.the("Botón ahorrar")
+            .located(By.xpath("//body/div[@id='app']/div[@class='oxd-layout orangehrm-upgrade-layout']/div[@class='oxd-layout-container']/div[@class='oxd-layout-context']/div[@class='orangehrm-background-container']/div[@class='orangehrm-paper-container']/div[@class='orangehrm-container']/div[@role='table']/div[@role='rowgroup']/div[2]/div[1]"));
 
 }

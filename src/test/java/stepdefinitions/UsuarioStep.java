@@ -18,12 +18,12 @@ public class UsuarioStep {
 
     //Se crea la lista de String que se van a ingresar en usuario y contrasena
     @Y("ingrese al modulo admin y de clic en el botón + Add")
-    public void ingresealmoduloadminydeclicenelbotónAdd()throws InterruptedException
-    {
+    public void ingresealmoduloadminydeclicenelbotónAdd() throws InterruptedException {
         COMMON_ACTOR.attemptsTo(nuevoTask.nuevoUsuario());
     }
+
     @Entonces("se diligencian los campos {string}, {string}, {string}, {string}")
-    public void sediligencianloscampos (String nombreEmpleado, String nombreUsuario, String contraseña, String confContraseña)throws InterruptedException{
+    public void sediligencianloscampos(String nombreEmpleado, String nombreUsuario, String contraseña, String confContraseña) throws InterruptedException {
         COMMON_ACTOR.attemptsTo(
                 formularioTask.diligenciarFormulario(nombreEmpleado, nombreUsuario, contraseña, confContraseña)
         );
