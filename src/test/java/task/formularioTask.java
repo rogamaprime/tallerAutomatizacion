@@ -44,7 +44,6 @@ public class formularioTask implements Task {
                 Enter.theValue(Clave).into(contraseña),
                 Enter.theValue(ConfClave).into(conf_Contraseña),
                 Click.on(btnAhorrar)
-
         );
     }
     //Es el metodo crea un objeto apartir de la clase

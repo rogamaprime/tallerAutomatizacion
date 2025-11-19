@@ -47,6 +47,6 @@ public class webObjectUsuarios {
             .located(By.xpath("(//input[@type='password'])[2]"));
 
     public static Target btnAhorrar = Target.the("Botón ahorrar")
-            .located(By.xpath("(//button[@type='submit'])[1]"));
+            .located(By.xpath("//button[normalize-space()='Save']"));
 
 }

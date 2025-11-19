@@ -15,7 +15,7 @@ Antecedentes:
   Entonces se diligencian los campos "<Empleado>", "<Usuario>", "<Clave>", "<ConfClave>"
     Ejemplos:
       | Empleado | Usuario | Clave | ConfClave |
-      | Joseph  Evans | pruebausuario | 12345 | 12345 |
+      | Joseph  Evans | pruebausuario | Ma*12345678 | Ma*12345678 |
 
 
 
