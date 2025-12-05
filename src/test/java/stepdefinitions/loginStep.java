@@ -25,19 +25,20 @@ public class loginStep {
 
     @Dado("que el usuario ingrese a la pagina de orange")
     //primer escenario
-    public void queelusuarioingresealapaginadeorange(){
+    public void queelusuarioingresealapaginadeorange() {
         COMMON_ACTOR.attemptsTo(
                 //Este es el robot que va a realizar una acción
                 Open.browserOn().thePageNamed(Orange)
         );
     }
+
     //Se crea la lista de String que se van a ingresar en usuario y contrasena
     @Cuando("ingrese las credenciales con los datos correctos")
-    public void ingreselascredencialesconlosdatoscorrectos(List<Map<String, String>> dataMapList)
-    {
+    public void ingreselascredencialesconlosdatoscorrectos(List<Map<String, String>> dataMapList) {
         Map<String, String> parameters = dataMapList.get(0);
         COMMON_ACTOR.attemptsTo(loginTask.iniciarSesion(parameters));
     }
+
     @Entonces("Se visualizara el nombre del usuario con la foto")
     public void seVisualizaraElNombreDelUsuarioConLaFoto() {
         COMMON_ACTOR.attemptsTo(
@@ -45,12 +46,13 @@ public class loginStep {
                 Ensure.that(barLogin).isDisplayed()
         );
     }
+
     @Cuando("ingrese las credenciales con los datos incorrectos")
-    public void ingreselascredencialesconlosdatosincorrectos(List<Map<String, String>> dataMapList)
-    {
+    public void ingreselascredencialesconlosdatosincorrectos(List<Map<String, String>> dataMapList) {
         Map<String, String> parameters = dataMapList.get(0);
         COMMON_ACTOR.attemptsTo(loginTask.iniciarSesion(parameters));
     }
+
     @Entonces("Se debe visualizar el mensaje de error")
     public void Sedebevisualizarelmensajedeerror() {
         COMMON_ACTOR.attemptsTo(

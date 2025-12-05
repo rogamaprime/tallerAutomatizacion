@@ -15,23 +15,37 @@ Característica: Probar crud de usuarios en orange
     Entonces se diligencian los campos "<Empleado>", "<Usuario>", "<Clave>", "<ConfClave>"
     Ejemplos:
       | Empleado      | Usuario                  | Clave       | ConfClave   |
-      | Joseph  Evans | usuarioPrueba No borrar2 | Ma*12345678 | Ma*12345678 |
+      | Joseph  Evans | usuario Prueba No borrar | Ma*12345678 | Ma*12345678 |
 
   @FiltroUsername
   Esquema del escenario: Filtrar por nombre de usuario
     Cuando ingresa a modulo admin para usar los filtros de consulta
-    Y filtra por nombre de usuario "<Usuario>"
-    Entonces debería ver resultados relacionados con "<Usuario>"
-
+    Entonces filtra por nombre de usuario "<nomUsuario>", y da clic en el botón buscar
+    Y se debe visualizar el resultado
     Ejemplos:
-      | Usuario                  |
-      | usuarioPrueba No borrar2 |
+      | nomUsuario |
+      | Admin      |
 
+  @FiltroUserRol
+  #Esquema del
+    Escenario: Filtrar por Rol de usuario
+    Cuando ingresa a modulo admin para usar los filtros de consulta
+    Entonces filtra por rol de usuario y da clic en el botón buscar
+    Y se debe visualizar el resultado
 
+  @FiltroNomEmpl
+  Esquema del escenario: Filtrar por nombre de empleado
+    Cuando ingresa a modulo admin para usar los filtros de consulta
+    Entonces filtra por nombre empleado "<NomEmpl>", y da clic en el botón buscar
+    Y se debe visualizar el resultado
+    Ejemplos:
+      | NomEmpl |
+      | Unnati rajguru   |
 
-
-
-
-
-
+  @FiltroUserStado
+  #Esquema del
+    Escenario: Filtrar por estado de usuario
+    Cuando ingresa a modulo admin para usar los filtros de consulta
+    Entonces filtra por estado de usuario y da clic en el botón buscar
+    Y se debe visualizar el resultado
 
